@@ -1,3 +1,4 @@
+import sys
 def sofiaa(vec):
     p= vec[0]
     u= vec[len(vec)-1]
@@ -33,4 +34,14 @@ def juego_greedy(vec):
         else:
             v_mateo.append(mateoo(vec))
 
-    return v_sofia, v_mateo
+    return sum(v_sofia)
+
+def ParsearArchivo(archivo):
+    with open(archivo, 'r') as archivo:
+        contenido = archivo.read()
+        arr = [int(num) for num in contenido.split(';') if num.strip().isdigit()]
+    return arr
+
+if __name__ == "__main__":
+    archivo = sys.argv[1]
+    print(juego_greedy(ParsearArchivo(archivo)))
