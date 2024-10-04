@@ -1,12 +1,12 @@
 # Imports necesarios para el notebook
 from random import seed
-
+from parte1 import juego_greedy
 from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
 import scipy as sp
-
 from util import time_algorithm
+
 
 # Siempre seteamos la seed de aleatoridad para que los # resultados sean reproducibles
 seed(12345)
@@ -16,43 +16,6 @@ sns.set_theme()
 
 def get_random_array(size: int):
     return np.random.randint(0, 100.000, size)
-
-def sofiaa(vec):
-    p= vec[0]
-    u= vec[len(vec)-1]
-
-    if p > u:
-        vec = vec[1:]
-        return p
-    else:
-        vec = vec[:-1]
-        return u
-
-def mateoo(vec):
-    p= vec[0]
-    u= vec[len(vec)-1]
-
-    if p < u:
-        vec = vec[1:]
-        return p
-    else:
-        vec = vec[:-1]
-        return u
-
-
-def juego_greedy(vec):
-
-    v_sofia = [] * (len(vec)//2)
-    v_mateo = [] * (len(vec)//2)
-
-    for i in range(0, len(vec)):
-        if (i%2==0 or i==0):
-            v_sofia.append(sofiaa(vec))
-
-        else:
-            v_mateo.append(mateoo(vec))
-
-    return v_sofia, v_mateo
 
 x = np.linspace(100, 100_000, 20).astype(int)
 results = time_algorithm(juego_greedy, x, lambda s: [get_random_array(s)])

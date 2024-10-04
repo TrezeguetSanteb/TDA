@@ -1,26 +1,26 @@
 import sys
+import numpy as np
 def sofiaa(vec):
     p= vec[0]
     u= vec[len(vec)-1]
 
-    if(p>u):
-        vec.pop(0)
-        return p
+    if p > u:
+        vec = vec[1:]
+        return p, vec
     else:
-        vec.pop(len(vec)-1)
-        return u
-    
+        vec = vec[:-1]
+        return u, vec
+
 def mateoo(vec):
     p= vec[0]
     u= vec[len(vec)-1]
 
-    if(p<u):
-        vec.pop(0)
-        return p
+    if p < u:
+        vec = vec[1:]
+        return p , vec
     else:
-        vec.pop(len(vec)-1)
-        return u
-    
+        vec = vec[:-1]
+        return u, vec
     
 def juego_greedy(vec):
     
@@ -29,11 +29,11 @@ def juego_greedy(vec):
 
     for i in range(0, len(vec)):
         if (i%2==0 or i==0):
-            v_sofia.append(sofiaa(vec))
-
+            resultado, vec = sofiaa(vec) 
+            v_sofia.append(resultado)
         else:
-            v_mateo.append(mateoo(vec))
-
+            resultado, vec = mateoo(vec) 
+            v_mateo.append(resultado)
     return sum(v_sofia)
 
 def ParsearArchivo(archivo):
