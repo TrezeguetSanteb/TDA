@@ -22,14 +22,3 @@ def juego_programacion_dinamica(monedas):
 
                 dp[i][j] = max(pick_i, pick_j)
     return dp[0][n - 1]
-
-def parsearArchivo(archivo):
-    with open(archivo, 'r') as archivo:
-        for linea in archivo:
-            if linea[0] != '#':
-                arr = [int(num) for num in linea.split(';') if num.strip().isdigit()]
-    return arr
-
-print("Valor máximo que puede obtener Sophia:", juego_programacion_dinamica(parsearArchivo("/home/santi/Documentos/tda2/tpTDA/pruebas/TP2/5.txt")))
-
-#print(juego_programacion_dinamica([8, 15, 7, 9, 20, 1, 6]))
