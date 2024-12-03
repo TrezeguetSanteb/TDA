@@ -1,6 +1,6 @@
 # Imports necesarios para el notebook
 from random import seed
-from parte1 import juego_greedy
+from primera_parte import juego_greedy
 from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np

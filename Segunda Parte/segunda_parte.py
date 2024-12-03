@@ -1,3 +1,5 @@
+import sys
+
 def juego_programacion_dinamica(monedas):
     n = len(monedas)
     dp = [[0] * n for _ in range(n)]
@@ -22,3 +24,14 @@ def juego_programacion_dinamica(monedas):
 
                 dp[i][j] = max(pick_i, pick_j)
     return dp[0][n - 1]
+
+def parsear_archivo(archivo):
+    with open(archivo, 'r') as archivo:
+        for linea in archivo:
+            if linea[0] != '#':
+                arr = [int(num) for num in linea.split(';') if num.strip().isdigit()]
+    return arr
+
+if __name__ == "__main__":
+    archivo = sys.argv[1]
+    print("Ganancia Sophia:", juego_programacion_dinamica(parsear_archivo(archivo)))

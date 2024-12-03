@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+
 def sofiaa(vec):
     p= vec[0]
     u= vec[len(vec)-1]
