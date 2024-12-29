@@ -15,5 +15,5 @@ python3 parte2.py pruebas_catedra/<nombre>.txt
 ### Parte 3
 
 ```bash
-python3 parte1.py pruebas_parte3/<nombre>.txt
+python3 parte3.py pruebas_parte3/<nombre>.txt
 ```
