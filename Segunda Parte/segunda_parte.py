@@ -72,6 +72,7 @@ def parsear_archivo(archivo):
                 arr = [int(num) for num in linea.split(';') if num.strip().isdigit()]
     return arr
 
+
 if __name__ == "__main__":
     archivo = sys.argv[1]
     monedas = parsear_archivo(archivo)

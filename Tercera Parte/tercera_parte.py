@@ -271,7 +271,6 @@ def leer_ejemplo(archivo):
 
     return n, m, barcos, restricciones_filas, restricciones_columnas
 
-
 if __name__ == "__main__":
     archivo = sys.argv[1]
     n, m, barcos, filas, columnas = leer_ejemplo(archivo)

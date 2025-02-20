@@ -15,9 +15,9 @@ np.random.seed(12345)
 sns.set_theme()
 
 def get_random_array(size: int):
-    return np.random.randint(0, 100.000, size)
+    return np.random.randint(0, 1000, size)
 
-x = np.linspace(100, 100_000, 20).astype(int)
+x = np.linspace(1, 2000, 1000).astype(int)
 results = time_algorithm(juego_greedy, x, lambda s: [get_random_array(s)])
 
 
